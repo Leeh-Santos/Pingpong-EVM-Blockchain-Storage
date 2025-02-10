@@ -91,7 +91,7 @@ signed = web3_settings.w3.eth.account.sign_transaction(
 3 - Send the Transaction:
 
 ```
-tx_receipt = web3_settings.w3.eth.wait_for_transaction_receipt(tx_hash)
+tx_hash = web3_settings.w3.eth.send_raw_transaction(signed.raw_transaction)
 ```
 - Broadcasts the signed transaction to the Ethereum network
 - Returns a transaction hash that can be used to track the transaction
