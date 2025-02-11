@@ -23,23 +23,38 @@ The warning: Unknown Unstrusted Personal Certificate will pop up, don't worry, y
 
 At the Login page you can either Signin or use the admin user defined in .env previously -> username: admin pass: admin123
 
+<table>
+  <tr>
+    <td><img src="images-rdme/landing.png" alt="tornei"></td>
+    <td><img src="images-rdme/profile.png" alt="tornei"></td>
+  </tr>
+</table>
+
 APP STRUCTURE Resume:
 
 - The Django API is located at pingping/autentication/views.py for the Backend
 - For the Frontend SPA a Router was used in order to render the page-element and its script according to the url or app navegation. Located at static/js/router.js and the scripts for the page-elements and API calls are located at static/js/views directory.
 
-The main focus of this repo is to show the EVM integration, without further or do lets dive in!
+Since the main focus of this repo is to show the EVM integration, without further or do lets dive in!
 
-According to the Major selected on the [42 Project subject](en.subject.pdf), the website needed to handle the usual user authantication and be capable of storing and retreiving PingPing Tournament matches, So it was necessary to apply a web2 + web3 logic.
+According to the Major selected on the [42 Project subject](en.subject.pdf), the website needed to handle the usual user authentication and be capable of storing and retrieving info from the PingPong Tournaments, So it was necessary to apply a web2 + web3 logic.
 
-In fully web3 apps, your wallet is your authentication but since we are already using our API to authenticate users, the solution was to have a server wallet address that would interact with the already deployed smart-contract on sepolia. Here is how it works:
+In fully web3 apps, your wallet is your authentication, but since we are already using our API to authenticate users, the solution was to have a server wallet address that would interact with the already deployed smart-contract on sepolia. Here is how it works:
 
-First I deployed this [Smart-contract](tournament-pica.sol) with remix Ide, it has a structure to store the Tournament PingPong matches, each match will have the nick of the players, the winner and the score, which will be saved in a Tournamet array. The contract is also capable of retreiving the number of Tournaments played, and a Tournaments full information by index.
+First I deployed this [Smart-contract](tournament-pica.sol) with Remix IDE, it has a structure to store the Tournament PingPong matches, each match will have the nick of the players, the winner and the score, which will be saved in a Tournamet array. The contract is also capable of retreiving the number of Tournaments played, and the Tournament's full information by index.
+
+
+
+<div align="center">
+  <h2>⚠️ DISCLAIMER ⚠️ **SECURITY WARNING**</h2>
+</div>
 
 The .env file was uploaded just for demonstration purposes. 
+<div style="; color: white; padding: 15px; border-radius: 5px; margin: 10px 0;">
+<strong>NEVER EVER PUT YOUR PRIVATE KEYS IN A .ENV FILE AND LEAVE IT UNENCRYPTED, IN FACT ANY KIND OF PRIVATE KEY IN PLAIN TEXT IS DANGEROUS.</strong>
+</div>
 
-DISCLAIMER:
-NEVER EVER PUT YOUR PRIVITE KEYS IN A .ENV FILE AND LEAVE IT UNYCRYPTED, IN FACT ANY KIND PLAIN TEXT PRIVATE KEY IS DANGEROUS. There are many solutions out there, like a vault, using forge store keys...
+There are many solutions out there, like a vault, using forge store keys...
 
 A [file](pingpong/authentication/web3_settings.py) was added due to necessary blockchain setup interaction for the API, this sets contract abi(a JSON that defines the interface of a smart contract to interact with) and some variables from the [.env](.env) that will be needed in order interact with the Sepolia testnet, such as the already deployed smart-contract address, the infura Id, and the server wallet's privite and public keys.
 
