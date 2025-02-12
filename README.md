@@ -120,7 +120,7 @@ tx_receipt = web3_settings.w3.eth.wait_for_transaction_receipt(tx_hash):
 - Returns a receipt with details about the transaction execution
 - Important for knowing if the transaction was successful or failed
 
-Once is backend finishes the transaction it returns the transaction hash, so you can verify at sepolia.etherscan 
+Once is backend finishes the transaction, it returns the transaction hash, so you can verify at sepolia.etherscan later
 
 ![acabou!](images-rdme/tourended.png)
 
