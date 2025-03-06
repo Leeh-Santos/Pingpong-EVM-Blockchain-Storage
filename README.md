@@ -51,10 +51,11 @@ First I deployed this [Smart-contract](tournament-pica.sol) with Remix IDE, it h
 
 The .env file was uploaded just for demonstration purposes. 
 <div style="; color: white; padding: 15px; border-radius: 5px; margin: 10px 0;">
-<strong>NEVER EVER PUT YOUR PRIVATE KEYS IN A .ENV FILE AND LEAVE IT UNENCRYPTED, IN FACT ANY KIND OF PRIVATE KEY IN PLAIN TEXT IS DANGEROUS.</strong>
+<strong>NEVER EVER PUT YOUR PRIVATE KEYS IN A .ENV FILE AND LEAVE IT UNENCRYPTED, IN FACT ANY KIND OF PRIVATE KEY IN PLAIN TEXT IS</strong> <s>SUICIDE</s>  <strong>DANGEROUS.</strong>
 </div>
 
-There are many solutions out there, like a vault, using forge store keys...
+
+There are many solutions out there, like a vault, using forge store keys, just encrypt it... 
 
 A [file](pingpong/authentication/web3_settings.py) was added due to necessary blockchain setup interaction for the API, this sets contract abi(a JSON that defines the interface of a smart contract to interact with) and some variables from the [.env](.env) that will be needed in order interact with the Sepolia testnet, such as the already deployed smart-contract address, the infura Id, and the server wallet's privite and public keys.
 
@@ -137,6 +138,8 @@ Here we simple pass the parameter with the tournament index that you want to loo
 ```
 
 ![tornei](images-rdme/gettour.png)
+
+ 
 
 
 
